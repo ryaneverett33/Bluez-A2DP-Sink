@@ -1,0 +1,6 @@
+/home/ryan/Projects/bluezSharp/testProperties/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/ryan/Projects/bluezSharp/testProperties/bin/Debug/dbus-sharp.dll
+/home/ryan/Projects/bluezSharp/testProperties/bin/Debug/testProperties.exe.mdb
+/home/ryan/Projects/bluezSharp/testProperties/bin/Debug/testProperties.exe
+/home/ryan/Projects/bluezSharp/testProperties/obj/x86/Debug/testProperties.exe
+/home/ryan/Projects/bluezSharp/testProperties/obj/x86/Debug/testProperties.exe.mdb

@@ -1,0 +1,6 @@
+/home/ryan/Projects/bluezTest/bluezTest/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/ryan/Projects/bluezTest/bluezTest/bin/Debug/bluezTest.exe.mdb
+/home/ryan/Projects/bluezTest/bluezTest/bin/Debug/bluezTest.exe
+/home/ryan/Projects/bluezTest/bluezTest/obj/x86/Debug/bluezTest.exe
+/home/ryan/Projects/bluezTest/bluezTest/obj/x86/Debug/bluezTest.exe.mdb
+/home/ryan/Projects/bluezTest/bluezTest/bin/Debug/dbus-sharp.dll

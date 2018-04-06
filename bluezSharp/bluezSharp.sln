@@ -1,0 +1,31 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{118B78C4-647F-4D55-8AB4-88595B4F2383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "screenSaverTest", "screenSaverTest\screenSaverTest.csproj", "{EDA18AD8-C575-48C9-882C-C6CD1E56E689}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testProperties", "testProperties\testProperties.csproj", "{8E01B207-23FB-4DE1-9646-86073EA81C30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalsTest", "SignalsTest\SignalsTest.csproj", "{D27DCA1B-8A92-4178-8DDD-6AB79EA6B556}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDA18AD8-C575-48C9-882C-C6CD1E56E689}.Debug|x86.ActiveCfg = Debug|x86
+		{EDA18AD8-C575-48C9-882C-C6CD1E56E689}.Debug|x86.Build.0 = Debug|x86
+		{EDA18AD8-C575-48C9-882C-C6CD1E56E689}.Release|x86.ActiveCfg = Release|x86
+		{EDA18AD8-C575-48C9-882C-C6CD1E56E689}.Release|x86.Build.0 = Release|x86
+		{8E01B207-23FB-4DE1-9646-86073EA81C30}.Debug|x86.ActiveCfg = Debug|x86
+		{8E01B207-23FB-4DE1-9646-86073EA81C30}.Debug|x86.Build.0 = Debug|x86
+		{8E01B207-23FB-4DE1-9646-86073EA81C30}.Release|x86.ActiveCfg = Release|x86
+		{8E01B207-23FB-4DE1-9646-86073EA81C30}.Release|x86.Build.0 = Release|x86
+		{D27DCA1B-8A92-4178-8DDD-6AB79EA6B556}.Debug|x86.ActiveCfg = Debug|x86
+		{D27DCA1B-8A92-4178-8DDD-6AB79EA6B556}.Debug|x86.Build.0 = Debug|x86
+		{D27DCA1B-8A92-4178-8DDD-6AB79EA6B556}.Release|x86.ActiveCfg = Release|x86
+		{D27DCA1B-8A92-4178-8DDD-6AB79EA6B556}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

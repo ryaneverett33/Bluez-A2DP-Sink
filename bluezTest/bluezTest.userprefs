@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{F08E709B-0750-4999-AD7F-E9A0ADA680A4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="bluezTest/Program.cs">
+    <Files>
+      <File FileName="bluezTest/Program.cs" Line="3" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.bluezTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

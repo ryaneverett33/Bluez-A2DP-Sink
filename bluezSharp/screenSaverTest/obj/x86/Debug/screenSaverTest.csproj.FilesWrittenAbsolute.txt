@@ -1,0 +1,6 @@
+/home/ryan/Projects/bluezSharp/screenSaverTest/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/ryan/Projects/bluezSharp/screenSaverTest/bin/Debug/screenSaverTest.exe.mdb
+/home/ryan/Projects/bluezSharp/screenSaverTest/bin/Debug/screenSaverTest.exe
+/home/ryan/Projects/bluezSharp/screenSaverTest/obj/x86/Debug/screenSaverTest.exe
+/home/ryan/Projects/bluezSharp/screenSaverTest/obj/x86/Debug/screenSaverTest.exe.mdb
+/home/ryan/Projects/bluezSharp/screenSaverTest/bin/Debug/dbus-sharp.dll
