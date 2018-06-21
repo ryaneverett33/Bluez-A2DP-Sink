@@ -1,5 +1,6 @@
-public namespace player.bluez {
-    abstract class Utils {
-        public Object ObjectIntrospect(string xml);
+using System;
+namespace player.bluez {
+	public abstract class Utils {
+        public abstract Object ObjectIntrospect(string xml);
     }
 }

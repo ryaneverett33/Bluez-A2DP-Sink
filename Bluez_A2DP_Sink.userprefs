@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{BB4AB54E-07F5-4AB0-A5CC-57D60EFCD5BD}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Main.cs">
+    <Files>
+      <File FileName="src/bluez/Utils.cs" Line="2" Column="25" />
+      <File FileName="src/bluez/org-bluez-hci/IProperties.cs" Line="15" Column="113" />
+      <File FileName="src/bluez/root/IObjectManager.cs" Line="9" Column="3" />
+      <File FileName="src/Main.cs" Line="5" Column="41" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.ItemProperties.Bluez__A2DP__Sink PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

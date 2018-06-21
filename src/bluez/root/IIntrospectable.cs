@@ -1,7 +1,11 @@
 using org.freedesktop.DBus;
+using DBus;
 
-[Interface("org.freedesktop.DBus.Introspectable")]
-public interface IIntrospectable {
-    //returns xml
-    string Introspect();
+namespace player.bluez { 
+	[Interface ("org.freedesktop.DBus.Introspectable")]
+	public interface IIntrospectable
+	{
+		//returns xml
+		string Introspect ();
+	}
 }

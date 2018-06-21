@@ -1,10 +1,8 @@
 ﻿using System;
-namespace Bluez_A2DP_Sink
-{
-	public class Main
-	{
-		public Main()
-		{
-		}
+using org.freedesktop.DBus;
+
+public class Main {
+	public Main() {
+		
 	}
 }
