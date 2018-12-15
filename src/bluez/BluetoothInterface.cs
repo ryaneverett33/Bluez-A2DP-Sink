@@ -6,7 +6,7 @@ namespace player.bluez {
     //describes an hci interface
     public class BluetoothInterface {
         public int index;
-        ObjectPath path;
+        public ObjectPath path;
 
         //Interfaces
         public IAdapter adapter {

@@ -51,6 +51,7 @@
     <Compile Include="src\bluez\BluezManager.cs" />
     <Compile Include="src\bluez\BluetoothInterface.cs" />
     <Compile Include="src\bluez\root\IProperties.cs" />
+    <Compile Include="src\bluez\IAdapterExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\tests\" />
