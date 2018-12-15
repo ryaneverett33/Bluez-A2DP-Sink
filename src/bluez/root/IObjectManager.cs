@@ -1,10 +1,15 @@
 using org.freedesktop.DBus;
+using DBus;
+using System.Collections.Generic;
 
-[Interface("org.freedesktop.DBus.ObjectManager")]
-public interface IObjectManager {
-    string GetManagedObjects();
-	event InterfaceAddedHandler InterfacesAdded;
-	event InterfaceRemovedHandler InterfacesRemoved;
+namespace player.bluez {
+    [Interface("org.freedesktop.DBus.ObjectManager")]
+    public interface IObjectManager {
+        //'/org/bluez', '/org/bluez/hci0'
+        IDictionary<ObjectPath, IDictionary<string, IDictionary<string, object>>> GetManagedObjects();
+        event InterfacesAddedHandler InterfacesAdded;
+        event InterfacesRemovedHandler InterfacesRemoved;
+    }
+    public delegate void InterfacesAddedHandler(IDictionary<string, object> interfaces);
+    public delegate void InterfacesRemovedHandler(string[] interfaces);
 }
-public delegate void InterfaceAddedHandler(string interfaces);
-public delegate void InterfaceRemovedHandler(string[] interfaces);

@@ -1,9 +1,9 @@
 using System;
 
-public namespace player.bluez {
-    public  class ObjectIntrospectClass : Utils {
-        public overide Object ObjectIntrospect(string xml) {
-            throw new NotImplementedExecption();
+namespace player.bluez {
+    public abstract class ObjectIntrospectClass : Utils {
+        public override Object ObjectIntrospect(string xml) {
+            throw new NotImplementedException();
         }
     }
 }

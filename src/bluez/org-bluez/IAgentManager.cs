@@ -1,4 +1,5 @@
-using org.freedesktop.Dbus;
+using DBus;
+using org.freedesktop.DBus;
 
 [Interface("org.bluez.AgentManager1")]
 public interface IAgentManager {
