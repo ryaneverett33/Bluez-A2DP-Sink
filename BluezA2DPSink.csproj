@@ -51,10 +51,14 @@
     <Compile Include="src\bluez\BluezManager.cs" />
     <Compile Include="src\bluez\BluetoothInterface.cs" />
     <Compile Include="src\bluez\root\IProperties.cs" />
-    <Compile Include="src\bluez\IAdapterExtensions.cs" />
+    <Compile Include="src\bluez\org-bluez-hci\IDevice.cs" />
+    <Compile Include="src\bluez\dbus\IDeviceExtensions.cs" />
+    <Compile Include="src\bluez\dbus\IAdapterExtensions.cs" />
+    <Compile Include="src\bluez\dbus\ObjectPathExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\tests\" />
+    <Folder Include="src\bluez\dbus\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

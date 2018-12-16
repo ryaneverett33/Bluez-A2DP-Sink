@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using player.bluez;
+using DBus;
 
 public class Program {
     public static BluetoothInterface getInterface(BluetoothInterface[] interfaces) {
@@ -31,9 +32,11 @@ public class Program {
         return null;
     }
     public static bool doLoop = true;
+    public static Dictionary<string, IDevice> deviceList = new Dictionary<string, IDevice>();
     public static void Main(string[] args) {
         Console.CancelKeyPress += myHandler;
         BluezManager manager = new BluezManager();
+        manager.DeviceListChanged += DeviceListChangedHandler;
         BluetoothInterface inter = getInterface(manager.getInterfaces());
         Console.WriteLine("Setting Interface to Discovery Mode");
         IAdapter adapter = inter.adapter;
@@ -41,22 +44,35 @@ public class Program {
         Console.WriteLine("Discoverable: {0}, Pairable: {1}, Discovering: {2}",
             adapter.GetDiscoverable(inter.path), adapter.GetPairable(inter.path),
             adapter.GetDiscovering(inter.path));
-        Console.WriteLine("Printing UUIDs, Ctrl-C to cancel");
+        Console.WriteLine("Printing Devices, Ctrl-C to cancel");
+        DeviceListChangedHandler(manager.devices);
         List<string> uuids = new List<string>();
-
         while(doLoop) {
             string[] tmpUUIDs = adapter.GetUUIDs(inter.path);
-            foreach (string uuid in tmpUUIDs) {
+            /*foreach (string uuid in tmpUUIDs) {
                 if (!uuids.Contains(uuid)) {
                     uuids.Add(uuid);
                     Console.WriteLine("{0} : {1}", uuids.Count, uuid);
+                    //IDevice device = inter.getDevice(uuid);
+                    //Console.WriteLine("Name: {0}", device.GetName(device.path));
                 }
-            }
+            }*/
             System.Threading.Thread.Sleep(500);
         }
         adapter.StopDiscovery();
     }
     protected static void myHandler(object sender, ConsoleCancelEventArgs args) {
         doLoop = false;
+    }
+    public static void DeviceListChangedHandler(Dictionary<string, Tuple<ObjectPath, IDevice>> currentList) {
+        foreach (string address in currentList.Keys) {
+            if (!deviceList.ContainsKey(address)) {
+                Tuple<ObjectPath, IDevice> deviceTuple = currentList[address];
+                IDevice device = deviceTuple.Item2;
+                ObjectPath path = deviceTuple.Item1;
+                Console.WriteLine("Name: {0}, Address: {1}", device.GetName(path), device.GetAddress(path));
+                deviceList.Add(address, device);
+            }
+        }
     }
 }

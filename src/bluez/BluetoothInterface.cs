@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DBus;
 using org.freedesktop.DBus;
 
@@ -9,30 +10,13 @@ namespace player.bluez {
         public ObjectPath path;
 
         //Interfaces
-        public IAdapter adapter {
-            get;
-            private set;
-        }
-        public IGattManager gattManager {
-            get;
-            private set;
-        }
-        public IMedia media {
-            get;
-            private set;
-        }
-        public INetworkServer networkServer {
-            get;
-            private set;
-        }
-        public IIntrospectable introspectable {
-            get;
-            private set;
-        }
-        public IProperties properties {
-            get;
-            private set;
-        }
+        public IAdapter adapter { get; private set; }
+        public IGattManager gattManager { get; private set; }
+        public IMedia media { get; private set; }
+        public INetworkServer networkServer { get; private set; }
+        public IIntrospectable introspectable { get; private set; }
+        public IProperties properties { get; private set; }
+
         public BluetoothInterface(ObjectPath path) {
             this.path = path;
             resolveIndex();
@@ -65,6 +49,7 @@ namespace player.bluez {
                         return introspectable != null;
                     case "org.freedesktop.DBus.Properties":
                         properties = Bus.System.GetObject<IProperties>("org.bluez", path);
+                        properties.PropertiesChanged += PropertiesChangedHandler;
                         return properties != null;
                     default:
                         throw new InvalidOperationException("Interface Name is invalid");
@@ -95,6 +80,20 @@ namespace player.bluez {
                     throw new InvalidInterfaceException(String.Format("Interface {0} not recognized", interfaceName));
             }
         }
+        private void PropertiesChangedHandler(string name, IDictionary<string, object> props, string[] interfaces) {
+            /*Console.WriteLine("Property {0} changed!", name);
+            foreach (string @interface in interfaces) {
+                Console.WriteLine("\tInterface changed {0}", @interface);
+            }
+            foreach (string key in props.Keys) {
+                Console.WriteLine("\t\t{0} - {1}", key, props[key]);
+            }*/
+        }
+        public IDevice getDevice(string uuid) {
+            IDevice device = Bus.System.GetObject<IDevice>("org.bluez", path.Add(uuid));
+            return device;
+        }
+
     }
     public class InvalidInterfaceException : Exception {
         public InvalidInterfaceException() : base() { }
