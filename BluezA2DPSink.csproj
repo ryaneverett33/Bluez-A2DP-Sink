@@ -55,6 +55,7 @@
     <Compile Include="src\bluez\dbus\IDeviceExtensions.cs" />
     <Compile Include="src\bluez\dbus\IAdapterExtensions.cs" />
     <Compile Include="src\bluez\dbus\ObjectPathExtensions.cs" />
+    <Compile Include="src\bluez\BusLoop.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\tests\" />

@@ -1,0 +1,6 @@
+tests/*
+bin/*
+obj/*
+
+# IDE stuff
+.vs/*

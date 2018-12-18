@@ -34,6 +34,7 @@ public class Program {
     public static bool doLoop = true;
     public static Dictionary<string, IDevice> deviceList = new Dictionary<string, IDevice>();
     public static void Main(string[] args) {
+        BusLoop loop = BusLoop.Instance;
         Console.CancelKeyPress += myHandler;
         BluezManager manager = new BluezManager();
         manager.DeviceListChanged += DeviceListChangedHandler;
@@ -48,7 +49,7 @@ public class Program {
         DeviceListChangedHandler(manager.devices);
         List<string> uuids = new List<string>();
         while(doLoop) {
-            string[] tmpUUIDs = adapter.GetUUIDs(inter.path);
+            //string[] tmpUUIDs = adapter.GetUUIDs(inter.path);
             /*foreach (string uuid in tmpUUIDs) {
                 if (!uuids.Contains(uuid)) {
                     uuids.Add(uuid);
@@ -60,6 +61,7 @@ public class Program {
             System.Threading.Thread.Sleep(500);
         }
         adapter.StopDiscovery();
+        loop.Shutdown();
     }
     protected static void myHandler(object sender, ConsoleCancelEventArgs args) {
         doLoop = false;
