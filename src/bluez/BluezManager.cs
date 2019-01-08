@@ -15,7 +15,6 @@ namespace player.bluez {
             get;
             private set;
         }
-        public event DeviceListChangedHandler DeviceListChanged;
 
         public BluezManager() {
             bus = Bus.System;
@@ -42,10 +41,10 @@ namespace player.bluez {
         }
         public void InterfacesRemovedHandler(ObjectPath path, string[] interfaces) {
             Console.WriteLine("Interfaces Removed!");
-            //Console.WriteLine("Interfaces removed at path: {0}", path);
-            /*foreach (string @interface in interfaces) {
+            Console.WriteLine("Interfaces removed at path: {0}", path);
+            foreach (string @interface in interfaces) {
                 Console.WriteLine("\t Interface {0} removed", @interface);
-            }*/
+            }
         }
         private void loadBluetoothInterfaces() {
             IDictionary<ObjectPath, IDictionary<string, IDictionary<string, object>>> managedObjects = objectManager.GetManagedObjects();

@@ -29,7 +29,6 @@ namespace player.bluez {
             Shutdown();
         }
         public void Shutdown() {
-            Console.WriteLine("Called shutdown");
             doWork = false;
             Monitor.Pulse(_lockObject);
             workerThread.Join(100);

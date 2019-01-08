@@ -1,6 +1,7 @@
 tests/*
 bin/*
 obj/*
+*.cache
 
 # IDE stuff
 .vs/*

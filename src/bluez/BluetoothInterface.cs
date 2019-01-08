@@ -89,11 +89,6 @@ namespace player.bluez {
                 Console.WriteLine("\t\t{0} - {1}", key, props[key]);
             }*/
         }
-        public IDevice getDevice(string uuid) {
-            IDevice device = Bus.System.GetObject<IDevice>("org.bluez", path.Add(uuid));
-            return device;
-        }
-
     }
     public class InvalidInterfaceException : Exception {
         public InvalidInterfaceException() : base() { }

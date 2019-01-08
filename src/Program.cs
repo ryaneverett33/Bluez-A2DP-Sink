@@ -5,6 +5,10 @@ using DBus;
 
 public class Program {
     public static BluetoothInterface getInterface(BluetoothInterface[] interfaces) {
+        if (interfaces.Length == 0) {
+            Console.WriteLine("Failed to get any interfaces!");
+            Environment.Exit(-1);
+        }
         for (int i = 0; i < interfaces.Length; i++) {
             Console.WriteLine("{0}: hci{1}", i, interfaces[i].index);
         }
@@ -37,7 +41,6 @@ public class Program {
         BusLoop loop = BusLoop.Instance;
         Console.CancelKeyPress += myHandler;
         BluezManager manager = new BluezManager();
-        manager.DeviceListChanged += DeviceListChangedHandler;
         BluetoothInterface inter = getInterface(manager.getInterfaces());
         Console.WriteLine("Setting Interface to Discovery Mode");
         IAdapter adapter = inter.adapter;
