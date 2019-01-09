@@ -50,27 +50,32 @@ namespace player.bluez {
             IDictionary<ObjectPath, IDictionary<string, IDictionary<string, object>>> managedObjects = objectManager.GetManagedObjects();
             foreach (ObjectPath path in managedObjects.Keys) {
                 string[] pathSplit = Utils.splitObjectPath(path);
-                if (pathSplit[pathSplit.Length - 1].Contains("hci")) {
-                    BluetoothInterface hci = new BluetoothInterface(path);
-                    //Console.WriteLine("Bluetooth Interface: {0}", hci.index);
-                    IDictionary<string, IDictionary<string, object>> objectList = managedObjects[path];
-                    foreach (string managedObject in objectList.Keys) {
-                        IDictionary<string, object> properties = objectList[managedObject];
-                        //Console.WriteLine("\t{0}, Property Count: {1}", managedObject, properties.Count);
-                        hci.AddInterface(managedObject);
-                        foreach (string property in properties.Keys) {
-                            //Console.WriteLine("\t\t{0}:{1}", property, properties[property]);
+                try {
+                    if (pathSplit[pathSplit.Length - 1].Contains("hci")) {
+                        BluetoothInterface hci = new BluetoothInterface(path);
+                        //Console.WriteLine("Bluetooth Interface: {0}", hci.index);
+                        IDictionary<string, IDictionary<string, object>> objectList = managedObjects[path];
+                        foreach (string managedObject in objectList.Keys) {
+                            IDictionary<string, object> properties = objectList[managedObject];
+                            //Console.WriteLine("\t{0}, Property Count: {1}", managedObject, properties.Count);
+                            hci.AddInterface(managedObject);
+                            foreach (string property in properties.Keys) {
+                                //Console.WriteLine("\t\t{0}:{1}", property, properties[property]);
+                            }
+                        }
+                        interfaceList.Add(hci);
+                    }
+                    if (pathSplit[pathSplit.Length - 1].Contains("dev")) {
+                        IDevice device = bus.GetObject<IDevice>("org.bluez", path);
+                        string address = device.GetAddress(path), name = device.GetName(path);
+                        //Console.WriteLine("Bluetooth Device - Name: {0}, Address: {1}", name, address);
+                        if (!devices.ContainsKey(address)) {
+                            devices.Add(address, new Tuple<ObjectPath, IDevice>(path, device));
                         }
                     }
-                    interfaceList.Add(hci);
                 }
-                if (pathSplit[pathSplit.Length - 1].Contains("dev")) {
-                    IDevice device = bus.GetObject<IDevice>("org.bluez", path);
-                    string address = device.GetAddress(path), name = device.GetName(path);
-                    //Console.WriteLine("Bluetooth Device - Name: {0}, Address: {1}", name, address);
-                    if (!devices.ContainsKey(address)) {
-                        devices.Add(address, new Tuple<ObjectPath, IDevice>(path, device));
-                    }
+                catch (Exception e) {
+                    Console.WriteLine("Failed to add Interface, Error: {0}", e.Message);
                 }
             }
         }

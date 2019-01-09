@@ -76,6 +76,14 @@ public class Program {
                 IDevice device = deviceTuple.Item2;
                 ObjectPath path = deviceTuple.Item1;
                 Console.WriteLine("Name: {0}, Address: {1}", device.GetName(path), device.GetAddress(path));
+                Console.WriteLine("UUIDs:");
+                string[] uuids = device.GetUUIDs(path);
+                int i = 0;
+                foreach (string uuid in uuids)
+                {
+                    Console.WriteLine("\t{0}: {1}", i, uuid);
+                    i++;
+                }
                 deviceList.Add(address, device);
             }
         }

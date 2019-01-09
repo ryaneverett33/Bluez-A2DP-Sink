@@ -1,0 +1,21 @@
+Name,UUID
+Generic Attribute Profile,00001801
+A/V Remote Control,0000110e
+OBEX File Transfer,00001106
+Headset AG,00001112
+Generic Access Profile,00001800
+OBEX Object Push,00001105
+PnP Information,00001200
+A/V Remote Control Target,0000110c
+IrMC Sync,00001104
+Audio Source,0000110a
+Audio Sink,0000110b
+Message Notification Server,00001133
+Phonebook Access Server,0000112f
+Message Access Server,00001132
+Headset,00001108
+PANU,00001115
+NAP,00001116
+Handsfree Audio Gateway,0000111f
+SIM Access,0000112d
+

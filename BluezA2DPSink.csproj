@@ -57,6 +57,7 @@
     <Compile Include="src\bluez\dbus\ObjectPathExtensions.cs" />
     <Compile Include="src\bluez\BusLoop.cs" />
     <Compile Include="src\bluez\UUIDHelper.cs" />
+    <Compile Include="src\bluez\org-bluez-hci\ILEAdvertisingManager1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\tests\" />

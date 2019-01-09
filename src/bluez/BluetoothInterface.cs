@@ -12,6 +12,7 @@ namespace player.bluez {
         //Interfaces
         public IAdapter adapter { get; private set; }
         public IGattManager gattManager { get; private set; }
+        public ILEAdvertisingManager advertisingManager { get; private set; }
         public IMedia media { get; private set; }
         public INetworkServer networkServer { get; private set; }
         public IIntrospectable introspectable { get; private set; }
@@ -38,6 +39,9 @@ namespace player.bluez {
                     case "org.bluez.GattManager1":
                         gattManager = Bus.System.GetObject<IGattManager>("org.bluez", path);
                         return gattManager != null;
+                    case "org.bluez.LEAdvertisingManager1":
+                        advertisingManager = Bus.System.GetObject<ILEAdvertisingManager>("org.bluez", path);
+                        return advertisingManager != null;
                     case "org.bluez.Media1":
                         media = Bus.System.GetObject<IMedia>("org.bluez", path);
                         return media != null;
