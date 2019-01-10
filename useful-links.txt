@@ -1,0 +1,3 @@
+Useful links:
+Presentation on Bluez 5: https://events.static.linuxfound.org/sites/events/files/slides/Doing%20Bluetooth%20Low%20Energy%20on%20Linux.pdf
+Linux Documentation: https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/
