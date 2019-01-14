@@ -47,21 +47,13 @@ public class Program {
         adapter.StartDiscovery();
         Console.WriteLine("Discoverable: {0}, Pairable: {1}, Discovering: {2}",
             adapter.GetDiscoverable(inter.path), adapter.GetPairable(inter.path),
-            adapter.GetDiscovering(inter.path));
+            adapter.GetDiscovering(inter.path));            
         Console.WriteLine("Printing Devices, Ctrl-C to cancel");
         DeviceListChangedHandler(manager.devices);
         List<string> uuids = new List<string>();
         while(doLoop) {
-            //string[] tmpUUIDs = adapter.GetUUIDs(inter.path);
-            /*foreach (string uuid in tmpUUIDs) {
-                if (!uuids.Contains(uuid)) {
-                    uuids.Add(uuid);
-                    Console.WriteLine("{0} : {1}", uuids.Count, uuid);
-                    //IDevice device = inter.getDevice(uuid);
-                    //Console.WriteLine("Name: {0}", device.GetName(device.path));
-                }
-            }*/
             System.Threading.Thread.Sleep(500);
+            Console.
         }
         adapter.StopDiscovery();
         loop.Shutdown();

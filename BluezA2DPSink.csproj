@@ -34,6 +34,9 @@
     <Reference Include="dbus-sharp">
       <HintPath>lib\dbus-sharp.dll</HintPath>
     </Reference>
+    <Reference Include="mono-curses">
+      <HintPath>lib\mono-curses.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
